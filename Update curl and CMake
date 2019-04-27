@@ -1,7 +1,6 @@
+Update curl and CMake (refer to https://github.com/ruslo/hunter/issues/328)
 # Make source folder
 $ mkdir ~/src
-
-Step 1: Update curl and CMake (refer to https://github.com/ruslo/hunter/issues/328)
 
 # Remove old version curl and CMake
 $ sudo apt-get remove cmake
@@ -29,3 +28,6 @@ cd ~/src
 $ wget https://github.com/Kitware/CMake/releases/download/v3.14.3/cmake-3.14.3.tar.gz
 # Decompress
 $ tar -xvzf cmake-3.14.3.tar.gz
+# Install cmake
+$ cd cmake-3.14.3
+$ ./bootstrap --system-curl
