@@ -1,4 +1,4 @@
-Update curl and CMake (refer to https://github.com/ruslo/hunter/issues/328)
+Step1: Update curl and CMake (refer to https://github.com/ruslo/hunter/issues/328)
 # Make source folder
 $ mkdir ~/src
 
