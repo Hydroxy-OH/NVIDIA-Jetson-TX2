@@ -1,0 +1,22 @@
+Step 1: Update curl and CMake (refer to https://github.com/ruslo/hunter/issues/328)
+
+# Remove old version curl and CMake
+$ sudo apt-get remove cmake
+$ sudo apt-get remove curl
+
+# Install SSL support
+$ sudo apt-get install libssl-dev
+
+# Install curl from source 
+# Download source code
+# New version may not work on TX2
+$ wget https://curl.haxx.se/download/curl-7.47.0.tar.gz
+# Decompress
+$ tar -xvzf curl-7.47.0.tar.gz
+# Install curl
+$ cd curl-7.47.0
+$ ./configure --with--ssl
+$ make
+$ sudo make install
+
+
