@@ -32,4 +32,4 @@ $ tar -xvzf cmake-3.14.3.tar.gz
 $ cd cmake-3.14.3
 $ ./bootstrap --system-curl
 $ make
-
+$ sudo make install
