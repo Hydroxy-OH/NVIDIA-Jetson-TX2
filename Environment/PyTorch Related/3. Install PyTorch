@@ -1,0 +1,16 @@
+Step3. Install PyTorch for python3 (refer to https://gist.github.com/dusty-nv/ef2b372301c00c0a9d3203e42fd83426)
+
+# Clone pyTorch repository
+cd ~/src
+git clone http://github.com/pytorch/pytorch
+cd pytorch
+git submodule update --init
+
+# Install pre-requirement
+$ sudo pip3 install -U setuptools
+$ sudo pip3 install -r requirements.txt
+$ sudo pip3 install scikit-build
+$ sudo pip3 install ninja
+
+# Install PyTorch
+$ sudo pip3 setup.py install
