@@ -31,3 +31,5 @@ $ tar -xvzf cmake-3.14.3.tar.gz
 # Install cmake
 $ cd cmake-3.14.3
 $ ./bootstrap --system-curl
+$ make
+
