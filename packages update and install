@@ -1,3 +1,6 @@
+# Make source folder
+$ mkdir ~/src
+
 Step 1: Update curl and CMake (refer to https://github.com/ruslo/hunter/issues/328)
 
 # Remove old version curl and CMake
@@ -8,8 +11,9 @@ $ sudo apt-get remove curl
 $ sudo apt-get install libssl-dev
 
 # Install curl from source 
+cd ~/src
 # Download source code
-# New version may not work on TX2
+# Newer version may not work on NVIDIA Jetson TX2
 $ wget https://curl.haxx.se/download/curl-7.47.0.tar.gz
 # Decompress
 $ tar -xvzf curl-7.47.0.tar.gz
@@ -17,6 +21,11 @@ $ tar -xvzf curl-7.47.0.tar.gz
 $ cd curl-7.47.0
 $ ./configure --with--ssl
 $ make
-$ sudo make install
+$ sudo make install 
 
-
+# Install CMake from source
+cd ~/src
+# Download source code (Access date: April 27, 2019)
+$ wget https://github.com/Kitware/CMake/releases/download/v3.14.3/cmake-3.14.3.tar.gz
+# Decompress
+$ tar -xvzf cmake-3.14.3.tar.gz
