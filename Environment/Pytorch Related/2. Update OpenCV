@@ -64,7 +64,23 @@ $ sudo ln -sf tegra/libGL.so libGL.so
 //#endif
 """
 
-# Install OpenCV
-# Download 
-
+# Install OpenCV from source
+$ cd ~/src
+# Download source code
+$ wget https://github.com/opencv/opencv/archive/3.4.6.zip \
+       -O opencv-3.4.6.zip
+# Decompress
+$ unzip opencv-3.4.6.zip
+# Build opencv
+$ cd opencv-3.4.6
+$ mkdir build
+$ cd build
+$ cmake -S ../ -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local \
+        -D WITH_CUDA=ON -D CUDA_ARCH_BIN="6.2" -D CUDA_ARCH_PTX="" \
+        -D WITH_CUBLAS=ON -D ENABLE_FAST_MATH=ON -D CUDA_FAST_MATH=ON \
+        -D ENABLE_NEON=ON -D WITH_LIBV4L=ON -D BUILD_TESTS=OFF \
+        -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=OFF \
+        -D WITH_QT=ON -D WITH_OPENGL=ON -D WITH_GSTREAMER=ON..
+$ make -j4
+$ sudo make install
 
