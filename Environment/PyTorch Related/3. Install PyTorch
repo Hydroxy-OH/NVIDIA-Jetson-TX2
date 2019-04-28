@@ -19,7 +19,7 @@ $ sudo pip3 install -r requirements.txt
 $ sudo pip3 install scikit-build
 $ sudo pip3 install ninja
 
-# Disable NCLL is needed, but don't have idea now
+# Disable NCCL is needed, but don't have idea now
 
 # Install PyTorch
 $ sudo python3 setup.py build
