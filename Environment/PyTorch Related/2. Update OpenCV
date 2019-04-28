@@ -28,7 +28,7 @@ $ sudo apt-get install qt5-default
 
 # Install pip for python3 and python2
 # Download install file
-# cd ~/src
+$ cd ~/src
 $ wget https://bootstrap.pypa.io/get-pip.py
 # Install pip for python3
 $ sudo python3 get-pip.py
