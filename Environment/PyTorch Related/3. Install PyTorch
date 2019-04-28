@@ -19,7 +19,7 @@ $ sudo pip3 install -r requirements.txt
 $ sudo pip3 install scikit-build
 $ sudo pip3 install ninja
 
-# Edit CMakeLists.txt 
+# Modify CMakeList.txt (line #100) as "opion(USE_NCCL "Use NCCL" OFF)"
 $ vim CMakeList.txt
 
 # Install PyTorch
