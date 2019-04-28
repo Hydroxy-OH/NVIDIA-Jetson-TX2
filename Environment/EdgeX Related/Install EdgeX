@@ -1,4 +1,4 @@
-(Refer to https://oranwind.org/-edge-running-edgex-on-a-ubuntu/)
+/etc/systemd/system/edgex.service/etc/systemd/system/edgex.service(Refer to https://oranwind.org/-edge-running-edgex-on-a-ubuntu/)
 # Install pre-requirement
 # Install curl (refer to PyTorch related)
 $ sudo apt install libzmq3-dev
@@ -23,7 +23,30 @@ $ go get github.com/edgexfoundry/edgex-go
 $ cd ~/go/src/github.com/edgexfoundry/edgex-go
 $ make build
 
-# Install MongoDB
+# Install MongoDB (Remember to check the free space)
 $ sudo apt install mongodb-server
-# Start MongoDB
-$ systemctl status mongodb
+# Check MongoDB
+$ sudo systemctl status mongodb
+$ wget https://github.com/edgexfoundry/docker-edgex-mongo/raw/master/init_mongo.js
+$ sudo -u mongodb mongo < init_mongo.js
+
+# Create /etc/systemd/system/edgex.service
+$ sudo vim /etc/systemd/system/edgex.service
+"""
+[Unit]
+Description=EdgeX Foundry Microservices
+After=network.target auditd.service
+ConditionPathExists=/home/nvidia/go/src/github.com/edgexfoundry/edgex-go/bin
+[Service]
+WorkingDirectory=/home/nvidia/go/src/github.com/edgexfoundry/edgex-go/bin
+ExecStart=/home/nvidia/go/src/github.com/edgexfoundry/edgex-go/bin/edgex-launch.sh
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=simple
+[Install]
+WantedBy=multi-user.target
+Alias=edgex.service
+"""
+# Start EdgeX service
+$ sudo systemctl daemon-reload
+$ sudo systemctl start edgex
