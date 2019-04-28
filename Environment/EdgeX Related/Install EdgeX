@@ -1,0 +1,29 @@
+(Refer to https://oranwind.org/-edge-running-edgex-on-a-ubuntu/)
+# Install pre-requirement
+# Install curl (refer to PyTorch related)
+$ sudo apt install libzmq3-dev
+
+# Install Go and Glide from source (ARMv8)
+$ mkdir ~/src
+$ cd ~/src
+# Download Go from source
+$ wget https://dl.google.com/go/go1.12.4.linux-arm64.tar.gz
+# Decompress
+$ sudo tar -C /usr/local -xzf go1.12.4.linux-arm64.tar.gz
+$ export PATH=$PATH:/usr/local/go/bin
+# Download Glide from source (check whether the version supports arm64/ARMv8) and install (refer to https://github.com/Masterminds/glide/issues/1028)
+$ wget https://github.com/Masterminds/glide/releases/download/v0.13.1/glide-v0.13.1-linux-arm64.tar.gz 
+$ sudo tar -zxvf glide-v0.13.1-linux-arm64.tar.gz 
+$ sudo mv ./linux-arm64/glide /usr/local/bin/
+
+# Download EdgeX Foundry Source Code
+$ go get github.com/edgexfoundry/edgex-go
+
+# Install EdgeX Go Microservices
+$ cd ~/go/src/github.com/edgexfoundry/edgex-go
+$ make build
+
+# Install MongoDB
+$ sudo apt install mongodb-server
+# Start MongoDB
+$ systemctl status mongodb
