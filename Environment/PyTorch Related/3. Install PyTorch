@@ -1,5 +1,12 @@
 Step3. Install PyTorch for python3 (refer to https://gist.github.com/dusty-nv/ef2b372301c00c0a9d3203e42fd83426)
 
+# Add 8G swap
+$ cd /mnt
+$ sudo fallocate -l 8G swapfile
+$ sudo chmod 600 swapfile
+$ sudo mkswap swapfile
+$ sudo swapon swapfile
+
 # Clone pyTorch repository
 cd ~/src
 git clone http://github.com/pytorch/pytorch
