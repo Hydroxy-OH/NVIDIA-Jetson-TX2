@@ -5,9 +5,10 @@ $ sudo apt-get purge libopencv*
 $ sudo apt autoremove
 
 # Install dependencies based on the Jetson Installing OpenCV Guide
+# For libvtk5-dev, refer to https://answers.opencv.org/question/32502/opencv-249-viz-module-not-there/?answer=32847#post-id-32847
 $ sudo apt-get install libavformat-dev libavutil-dev \
                        libswscale-dev libv4l-dev libeigen3-dev \
-                       libglew-dev libgtk2.0-dev
+                       libglew-dev libgtk2.0-dev libvtk5-dev
 
 # Install dependencies for gstreamer stuffs
 $ sudo apt-get install libdc1394-22-dev libxine2-dev \
@@ -80,7 +81,7 @@ $ cmake -S ../ -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local \
         -D WITH_CUDA=ON -D CUDA_ARCH_BIN="6.2" -D CUDA_ARCH_PTX="" \
         -D WITH_CUBLAS=ON -D ENABLE_FAST_MATH=ON -D CUDA_FAST_MATH=ON \
         -D ENABLE_NEON=ON -D WITH_LIBV4L=ON -D BUILD_TESTS=OFF \
-        -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=OFF \
+        -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=OFF  -D WITH_VTK=ON\
         -D WITH_QT=ON -D WITH_OPENGL=ON -D WITH_GSTREAMER=ON..
 $ make -j4
 $ sudo make install
