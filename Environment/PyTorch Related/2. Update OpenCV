@@ -55,8 +55,8 @@ $ sudo vim /usr/local/lib/python2.7/dist-packages/matplotlib/mpl-data/matplotlib
 $ sudo vim /usr/local/cuda/include/cuda_gl_interop.h
 $ cd /usr/lib/aarch64-linux-gnu/
 $ sudo ln -sf tegra/libGL.so libGL.so
-"""
 # Relevant lines (line #62~68) of cuda_gl_interop.h look like after the modification.
+"""
 //#if defined(__arm__) || defined(__aarch64__)
 //#ifndef GL_VERSION
 //#error Please include the appropriate gl headers before including cuda_gl_interop.h
