@@ -24,3 +24,6 @@ $ sudo pip3 install ninja
 # Install PyTorch
 $ sudo python3 setup.py build
 $ sudo python3 setup.py install
+
+# Remove swap
+$ sudo swapoff -a
