@@ -8,10 +8,10 @@ $ sudo mkswap swapfile
 $ sudo swapon swapfile
 
 # Clone pyTorch repository
-cd ~/src
-git clone http://github.com/pytorch/pytorch
-cd pytorch
-git submodule update --init
+$ cd ~/src
+$ git clone http://github.com/pytorch/pytorch
+$ cd pytorch
+$ git submodule update --init
 
 # Install pre-requirement
 $ sudo pip3 install -U setuptools
