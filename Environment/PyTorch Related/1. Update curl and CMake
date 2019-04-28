@@ -10,7 +10,7 @@ $ sudo apt-get remove curl
 $ sudo apt-get install libssl-dev
 
 # Install curl from source 
-cd ~/src
+$ cd ~/src
 # Download source code
 # Newer version may not work on NVIDIA Jetson TX2
 $ wget https://curl.haxx.se/download/curl-7.47.0.tar.gz
@@ -23,7 +23,7 @@ $ make
 $ sudo make install 
 
 # Install CMake from source
-cd ~/src
+$ cd ~/src
 # Download source code (Access date: April 27, 2019)
 $ wget https://github.com/Kitware/CMake/releases/download/v3.14.3/cmake-3.14.3.tar.gz
 # Decompress
