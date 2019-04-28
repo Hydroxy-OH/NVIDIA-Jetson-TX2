@@ -1,2 +1,2 @@
 # NVIDIA-Jetson-TX2
-Jetpack 3.3
+JetPack 3.3
