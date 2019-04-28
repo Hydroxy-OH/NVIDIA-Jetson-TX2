@@ -13,5 +13,5 @@ $ sudo pip3 install scikit-build
 $ sudo pip3 install ninja
 
 # Install PyTorch
-$ sudo pip3 setup.py build
-$ sudo pip3 setup.py install
+$ sudo python3 setup.py build
+$ sudo python3 setup.py install
