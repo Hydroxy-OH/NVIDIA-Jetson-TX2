@@ -1,4 +1,4 @@
-/etc/systemd/system/edgex.service/etc/systemd/system/edgex.service(Refer to https://oranwind.org/-edge-running-edgex-on-a-ubuntu/)
+(Refer to https://oranwind.org/-edge-running-edgex-on-a-ubuntu/)
 # Install pre-requirement
 # Install curl (refer to PyTorch related)
 $ sudo apt install libzmq3-dev
