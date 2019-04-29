@@ -85,6 +85,3 @@ $ cmake -S ../ -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local \
         -D WITH_QT=ON -D WITH_OPENGL=ON -D WITH_GSTREAMER=ON..
 $ make -j4
 $ sudo make install
-
-# Refer:
-# https://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
