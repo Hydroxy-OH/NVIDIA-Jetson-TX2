@@ -25,6 +25,7 @@ $ cd ~/go/src/github.com/edgexfoundry/edgex-go
 $ make build
 
 # Install MongoDB (Remember to check the free space)
+$ cd ~/src
 $ sudo apt install mongodb-server
 # Check MongoDB
 $ sudo systemctl status mongodb
