@@ -7,6 +7,10 @@
 lockfile='/var/run/WiFi_Check.pid'
 # Which Interface do you want to check/fix
 wlan='wlan0'
+# WiFi UUID
+uuid='Your_UUID'
+# WiFi Password
+pwd='Your_Password'
 ##################################################################
 echo
 echo "Starting WiFi check for $wlan"
@@ -40,7 +44,7 @@ else
     ifconfig $wlan down
     sleep 5
     ifconfig $wlan up
-    ifconfig $wlan | grep "inet addr"
+    nmcli dev wifi connect $uuid 
 fi
 
 echo 
