@@ -20,6 +20,7 @@ $ sudo pip3 install scikit-build
 $ sudo pip3 install ninja
 
 # Disable NCCL is needed, but don't have idea now
+# Refer to https://github.com/Bfzanchetta/DLARM/blob/master/jetsontx2/pytorch_install.sh
 
 # Install PyTorch
 $ sudo python3 setup.py build
