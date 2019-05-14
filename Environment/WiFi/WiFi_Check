@@ -1,6 +1,7 @@
 #!/bin/bash
 ##################################################################
 # Reference: https://github.com/dweeber/WiFi_Check
+# Nearly all codes are from Reference
 ##################################################################
 # Script checks to see if WiFi has a network IP and if not
 # restart WiFi
@@ -12,7 +13,7 @@
 #
 # o Install where you want to run it from like /usr/local/bin
 # o chmod 0755 /usr/local/bin/WiFi_Check
-# o Add to crontab
+# o Add to /etc/crontab
 #
 # Run Every 5 mins - Seems like ever min is over kill unless
 # this is a very common problem.  If once a min change */5 to *
