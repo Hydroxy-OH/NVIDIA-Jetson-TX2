@@ -19,8 +19,43 @@ $ sudo pip3 install -r requirements.txt
 $ sudo pip3 install scikit-build
 $ sudo pip3 install ninja
 
-# Disable NCCL is needed, but don't have idea now
+
+# Disable NCCL (PyTorch Version: 1.1.0a0+1011768)
 # Refer to https://github.com/Bfzanchetta/DLARM/blob/master/jetsontx2/pytorch_install.sh
+# Modify CMakeLists.txt (line #100) as "option(USE_NCCL "Use NCCL" OFF)" 
+$ vim CMakeLists.txt
+# Modify setup.py (line #199) by adding "USE_NCCL = False"
+$ vim setup.py
+# Modify tools/setup_helpers/nccl.py (line #9) as "USE_NCCL = False"
+$ vim tools/setup_helpers/nccl.py
+# Comment torch/csrc/cuda/nccl.h (line #8 and line #21~27) 
+# line #8
+"""
+//#include <nccl.h>
+"""
+# line #21~27 
+"""
+//void throw_nccl_error(ncclResult_t status);
+
+//static inline void NCCL_CHECK(ncclResult_t status) {
+//  if (status != ncclSuccess) {
+//    throw_nccl_error(status);
+//  }
+//}
+"""
+$ vim torch/csrc/cuda/nccl.h
+# Comment torch/csrc/distributed/c10d/ddp.cpp (line #6~8 and line #182)
+# line #6~8
+"""
+//#ifdef USE_C10D_NCCL
+//#include <torch/csrc/cuda/nccl.h>
+//#endif
+"""
+# line #182
+"""
+//torch::cuda::nccl::reduce(gradsBatchCoalesced, 0);
+"""
+$ vim torch/csrc/distributed/c10d/ddp.cpp
 
 # Install PyTorch
 $ sudo python3 setup.py build
