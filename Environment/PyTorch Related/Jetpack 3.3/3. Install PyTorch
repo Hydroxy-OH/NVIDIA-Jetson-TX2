@@ -19,7 +19,6 @@ $ sudo pip3 install -r requirements.txt
 $ sudo pip3 install scikit-build
 $ sudo pip3 install ninja
 
-
 # Disable NCCL (PyTorch Version: 1.1.0a0+1011768)
 # Refer to https://github.com/Bfzanchetta/DLARM/blob/master/jetsontx2/pytorch_install.sh
 # Modify CMakeLists.txt (line #100) as "option(USE_NCCL "Use NCCL" OFF)" 
