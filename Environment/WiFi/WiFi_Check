@@ -60,7 +60,7 @@ else
     ifconfig $wlan down
     sleep 5
     ifconfig $wlan up
-    nmcli dev wifi connect $uuid 
+    nmcli dev wifi connect $uuid password $pwd
 fi
 
 echo 
